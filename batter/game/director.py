@@ -1,5 +1,8 @@
 from time import sleep
 
+
+import os
+os.environ["RAYLIB_BIN_PATH"] = r"C:\Users\jlgun\AppData\Local\Programs\Python\Python39\Lib\site-packages\raylib-2.0.0-Win64-mingw\lib"
 import raylibpy
 from game import constants
 
