@@ -2,8 +2,16 @@ from time import sleep
 
 
 import os
-os.environ["RAYLIB_BIN_PATH"] = r"C:\Users\jlgun\AppData\Local\Programs\Python\Python39\Lib\site-packages\raylib-2.0.0-Win64-mingw\lib"
-import raylibpy
+try: 
+    os.environ["RAYLIB_BIN_PATH"] = r"C:\Users\jlgun\AppData\Local\Programs\Python\Python39\Lib\site-packages\raylib-2.0.0-Win64-mingw\lib"
+    import raylibpy
+except:
+    try:
+        os.environ["RAYLIB_BIN_PATH"] = r"C:\Users\Jonathans Desktop\AppData\Roaming\Python\Python39\site-packages\raylib-2.0.0-Win64-mingw\lib"
+        import raylibpy
+    except:
+        print("error In loading raylibpy")
+
 from game import constants
 
 class Director:
