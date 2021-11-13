@@ -10,7 +10,7 @@ from game.physics_service import PhysicsService
 from game.audio_service import AudioService
 
 # TODO: Add imports similar to the following when you create these classes
-# from game.brick import Brick
+from game.Brick import Brick
 # from game.ball import Ball
 # from game.paddle import Paddle
 # from game.control_actors_action import ControlActorsAction
@@ -23,7 +23,12 @@ def main():
     # create the cast {key: tag, value: list}
     cast = {}
 
-    cast["bricks"] = []
+
+
+    cast["bricks"] = [Brick(), Brick(), Brick()]
+    for _ in cast["bricks"]:
+        print(cast["bricks"])
+    
     # TODO: Create bricks here and add them to the list
 
     cast["balls"] = []
