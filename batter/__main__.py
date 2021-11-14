@@ -11,27 +11,50 @@ from game.audio_service import AudioService
 
 # TODO: Add imports similar to the following when you create these classes
 from game.Brick import Brick
-# from game.ball import Ball
+from game.Ball import Ball
 # from game.paddle import Paddle
 # from game.control_actors_action import ControlActorsAction
 # from game.handle_collisions_action import HandleCollisionsAction
 # from game.handle_off_screen_action import HandleOffScreenAction
-# from game.move_actors_action import MoveActorsAction
+from game.MoveActorsAction import MoveActorsAction
+
+
+
 
 def main():
 
     # create the cast {key: tag, value: list}
     cast = {}
+    x = 0
+    y = 0
+    k = 0
+    Mypoint = Point(x,x)
+    theBrick = Brick()
+    Brick_array = []
 
 
 
-    cast["bricks"] = [Brick(), Brick(), Brick()]
-    for _ in cast["bricks"]:
-        print(cast["bricks"])
+        
+    #Place words in array and Place the On the Screen
+    for _ in range(3):     
+        for _ in range (16):
+            Brick_array.append(Brick())
+            Brick_array[k].set_position(Point(x,y))
+            k += 1
+            x += 50
+        x = 0
+        y += 30
+
+
+
+
+    cast["bricks"] = Brick_array
+
+
     
     # TODO: Create bricks here and add them to the list
 
-    cast["balls"] = []
+    cast["balls"] = [Ball()]
     # TODO: Create a ball here and add it to the list
 
     cast["paddle"] = []
@@ -47,11 +70,12 @@ def main():
     audio_service = AudioService()
 
     draw_actors_action = DrawActorsAction(output_service)
+    move_actors_action = MoveActorsAction()
 
     # TODO: Create additional actions here and add them to the script
 
     script["input"] = []
-    script["update"] = []
+    script["update"] = [move_actors_action]
     script["output"] = [draw_actors_action]
 
 

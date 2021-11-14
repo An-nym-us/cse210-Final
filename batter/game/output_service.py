@@ -72,7 +72,7 @@ class OutputService:
             self (OutputService): An instance of OutputService.
             actor (Actor): The actor to render.
         """ 
-        position = actor.get_position()
+        position = self.new_method1(actor)
         x = position.get_x()
         y = position.get_y()
         width = actor.get_width()
@@ -87,6 +87,14 @@ class OutputService:
             self.draw_text(x, y, text, True)
         elif width > 0 and height > 0:
             self.draw_box(x, y, width, height)
+
+    def new_method1(self, actor):
+        position = self.new_method(actor)
+        return position
+
+    def new_method(self, actor):
+        position = actor.get_position()
+        return position
         
     def draw_actors(self, actors):
         """Renders the given list of actors on the screen.
