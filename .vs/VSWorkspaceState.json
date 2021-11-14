@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\batter",
+    "\\batter\\game"
   ],
-  "SelectedNode": "\\C:\\Users\\Jonathans Desktop\\Documents\\GitHub\\cse210-batter",
+  "SelectedNode": "\\batter\\__main__.py",
   "PreviewInSolutionExplorer": false
 }
