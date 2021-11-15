@@ -1,4 +1,5 @@
 
+
 from game.actor import Actor
 from game.point import Point
 from game import constants
@@ -13,17 +14,19 @@ class Brick(Actor):
         BRICK_IMAGE = constants.IMAGE_BRICK
         BRICK_WIDTH = constants.BRICK_WIDTH
         BRICK_HEIGHT = constants.BRICK_HEIGHT
-        #self.position = Point(0 , 0)
-        self.set_position(Point(0,0))
-        position = self.position
-        self._y = 0
-        self._x = 0
+        self.is_ball = False
+
+        self._velocity = Point(0, 0)
+        #Sets the postion to 0, 0 at spawn if the set postion is not defind
+        if self.set_position(Point(0,0)) is None:
+            self.set_position(Point(0,0))
+       
+
         
 
 
 
         #Constructor Functions
-        self.set_position(self.position)
         self.set_image(BRICK_IMAGE)
 
 
@@ -34,36 +37,12 @@ class Brick(Actor):
 
 
     #Sets the position of the brick on the screen
-    def set_position(self, position):
-        self._position = position
-
-
     def get_position(self):
-        self.position
+        return self._position
 
 
 
-    def get_x(self):
-        """Gets the horizontal distance.
-        
-        Args:
-            self (Point): An instance of Point.
-            
-        Returns:
-            integer: The horizontal distance.
-        """
-        return self._x
 
 
-    def get_y(self):
-        """Gets the vertical distance.
-        
-        Args:
-            self (Point): An instance of Point.
-            
-        Returns:
-            integer: The vertical distance.
-        """
-        return self._y
 
 

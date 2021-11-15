@@ -1,7 +1,9 @@
 
 from game.action import Action
 from game.point import Point
+from game.Ball import Ball
 from game import constants
+
 
 class MoveActorsAction(Action):
     def __init__(self):
@@ -22,7 +24,30 @@ class MoveActorsAction(Action):
 
         for group in cast.values():
             for actor in group:
-                print("hello")
+                
+                velocity_x = actor.get_velocity().get_x()
+                velocity_y = actor.get_velocity().get_y()
+
+                new_point_x = actor.get_position().get_x()
+                new_point_y = actor.get_position().get_y()
+
+                
+
+                
+                
+                if actor.is_ball == True:
+                    #This Moves The Ball Accross THe Screen
+                    new_point_x = velocity_x + new_point_x
+                    new_point_y = velocity_y + new_point_y
+                    print(new_point_x, new_point_y)
+                    
+                    actor.set_position(Point(new_point_x, new_point_y))
+
+
+                
+
+
+                
                 
         #raise NotImplementedError("execute not implemented in superclass")
 
