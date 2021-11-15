@@ -29,7 +29,7 @@ def main():
     y = 0
     k = 0
     Mypoint = Point(x,x)
-    theBrick = Brick()
+
     Brick_array = []
 
 

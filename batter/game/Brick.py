@@ -13,8 +13,12 @@ class Brick(Actor):
         BRICK_IMAGE = constants.IMAGE_BRICK
         BRICK_WIDTH = constants.BRICK_WIDTH
         BRICK_HEIGHT = constants.BRICK_HEIGHT
-        self.position = Point(0 , 0)
+        #self.position = Point(0 , 0)
+        self.set_position(Point(0,0))
         position = self.position
+        self._y = 0
+        self._x = 0
+        
 
 
 
@@ -34,9 +38,32 @@ class Brick(Actor):
         self._position = position
 
 
+    def get_position(self):
+        self.position
 
 
 
+    def get_x(self):
+        """Gets the horizontal distance.
+        
+        Args:
+            self (Point): An instance of Point.
+            
+        Returns:
+            integer: The horizontal distance.
+        """
+        return self._x
 
+
+    def get_y(self):
+        """Gets the vertical distance.
+        
+        Args:
+            self (Point): An instance of Point.
+            
+        Returns:
+            integer: The vertical distance.
+        """
+        return self._y
 
 

@@ -12,6 +12,9 @@ class Ball():
         self._height = constants.BALL_HEIGHT
         self.position = Point(250,250)
         position = self.position
+        self._velocity = Point(0, 0)
+
+
 
         #constructior Functions
         self.set_image(BALL_IMAGE)
@@ -39,6 +42,10 @@ class Ball():
 
     def get_image(self):
         return self._image
+
+    def get_velocity(self):
+
+        return self._velocity
 
 
 
