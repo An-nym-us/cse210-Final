@@ -12,7 +12,7 @@ from game.audio_service import AudioService
 # TODO: Add imports similar to the following when you create these classes
 from game.Brick import Brick
 from game.Ball import Ball
-# from game.paddle import Paddle
+from game.Paddle import Paddle
 # from game.control_actors_action import ControlActorsAction
 # from game.handle_collisions_action import HandleCollisionsAction
 from game.HandleOffScreenAction import HandleOffScreenAction
@@ -51,7 +51,6 @@ def main():
     cast["bricks"] = Brick_array
 
 
-    
     # TODO: Create bricks here and add them to the list
 
     cast["balls"] = [Ball()]

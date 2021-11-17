@@ -34,12 +34,12 @@ class MoveActorsAction(Action):
                 
 
                 
-                
+                #ensures that it is only moving the position of the ball and no other obejct
                 if actor.is_ball == True:
-                    #This Moves The Ball Accross THe Screen
+                    #This Moves The Ball Accross The Screen
                     new_point_x = velocity_x + new_point_x
                     new_point_y = velocity_y + new_point_y
-                    print(new_point_x, new_point_y)
+            
                     
                     actor.set_position(Point(new_point_x, new_point_y))
 
