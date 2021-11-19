@@ -14,7 +14,7 @@ from game.Brick import Brick
 from game.Ball import Ball
 from game.Paddle import Paddle
 # from game.control_actors_action import ControlActorsAction
-# from game.handle_collisions_action import HandleCollisionsAction
+from game.HandleCollisionsAction import HandleCollisionsAction
 from game.HandleOffScreenAction import HandleOffScreenAction
 from game.MoveActorsAction import MoveActorsAction
 
@@ -56,7 +56,7 @@ def main():
     cast["balls"] = [Ball()]
     # TODO: Create a ball here and add it to the list
 
-    cast["paddle"] = []
+    cast["paddle"] = [Paddle()]
     # TODO: Create a paddle here and add it to the list
 
 
@@ -71,11 +71,12 @@ def main():
     draw_actors_action = DrawActorsAction(output_service)
     move_actors_action = MoveActorsAction()
     handle_off_screen_actions = HandleOffScreenAction()
+    handle_collisions_action = HandleCollisionsAction()
 
     # TODO: Create additional actions here and add them to the script
 
     script["input"] = []
-    script["update"] = [move_actors_action, handle_off_screen_actions]
+    script["update"] = [move_actors_action, handle_off_screen_actions, handle_collisions_action]
     script["output"] = [draw_actors_action]
 
 
