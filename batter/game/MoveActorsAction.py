@@ -1,7 +1,7 @@
 
 from game.action import Action
 from game.point import Point
-from game.Ball import Ball
+from game.Coins import Coin
 from game.input_service import InputService
 from game import constants
 
@@ -11,7 +11,7 @@ class MoveActorsAction(Action):
         super().__init__()
         self.tag_list = []
         self.input_service = InputService()
-        self.xloc= 0
+        self.yloc= 0
         
         
 
@@ -39,7 +39,7 @@ class MoveActorsAction(Action):
                 
                 #ensures that it is only moving the position of the ball and no other obejct
                 try:
-                    if actor.is_ball == True:
+                    if actor.is_coin == True:
                         #This Moves The Ball Accross The Screen
                         new_point_x = velocity_x + new_point_x
                         new_point_y = velocity_y + new_point_y
@@ -47,15 +47,15 @@ class MoveActorsAction(Action):
                 except:
                     pass
 
-
+                
                 try:
-                    if actor.is_Paddle is not None:
+                    if actor.is_jetpack is not None:
                         direction = self.input_service.get_direction()
-                        y_locaction = actor.get_position().get_y()
-                        x_direction = direction.get_x()
-                        x_direction = x_direction * 15                    
-                        self.xloc = x_direction + self.xloc
-                        actor.set_position(Point(self.xloc, y_locaction))
+                        x_locaction = actor.get_position().get_x()
+                        y_direction = direction.get_y()                       
+                        y_direction = y_direction * 15                        
+                        self.yloc = y_direction + self.yloc
+                        actor.set_position(Point( x_locaction,self.yloc))
                 except:
                     pass
 

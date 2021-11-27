@@ -1,6 +1,6 @@
 from game.action import Action
 from game.point import Point
-from game.Ball import Ball
+from game.Coins import Coin
 import random
 from game import constants
 
@@ -23,7 +23,7 @@ class HandleOffScreenAction(Action):
 
                 
                 try:
-                    if actor.is_ball == True:
+                    if actor.is_coin == True:
                         #Make the ball change direction if it hits the left or right wall
                         velocity_x = actor.get_velocity().get_x()
                         velocity_y = actor.get_velocity().get_y()

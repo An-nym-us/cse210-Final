@@ -2,7 +2,7 @@ from game.actor import Actor
 from game.point import Point
 from game import constants
 
-class Ball(Actor):
+class Coin(Actor):
     def __init__(self):
         super().__init__()
         
@@ -10,7 +10,7 @@ class Ball(Actor):
         self._image = BALL_IMAGE
         self._width = constants.BALL_WIDTH
         self._height = constants.BALL_HEIGHT
-        self.is_ball = True
+        self.is_coin = True
         
 
         self._velocity = Point(10, 20)

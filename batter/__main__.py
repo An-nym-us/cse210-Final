@@ -10,9 +10,9 @@ from game.physics_service import PhysicsService
 from game.audio_service import AudioService
 
 # TODO: Add imports similar to the following when you create these classes
-from game.Brick import Brick
-from game.Ball import Ball
-from game.Paddle import Paddle
+from game.wall import Wall
+from game.Coins import Coin
+from game.Jetpack import Jetpack
 # from game.control_actors_action import ControlActorsAction
 from game.HandleCollisionsAction import HandleCollisionsAction
 from game.HandleOffScreenAction import HandleOffScreenAction
@@ -30,33 +30,33 @@ def main():
     k = 0
     Mypoint = Point(x,x)
 
-    Brick_array = []
+    wall_array = []
 
 
 
         
     #Place words in array and Place the On the Screen
-    for _ in range(3):     
-        for _ in range (16):
-            Brick_array.append(Brick())
-            Brick_array[k].set_position(Point(x,y))
-            k += 1
-            x += 50
-        x = 0
-        y += 30
+    #for _ in range(3):     
+    #    for _ in range (16):
+    #        Brick_array.append(Brick())
+    #        Brick_array[k].set_position(Point(x,y))
+    #        k += 1
+    #        x += 50
+    #    x = 0
+    #    y += 30
 
 
 
 
-    cast["bricks"] = Brick_array
+    cast["walls"] = wall_array
 
 
     # TODO: Create bricks here and add them to the list
 
-    cast["balls"] = [Ball()]
+    cast["coins"] = []
     # TODO: Create a ball here and add it to the list
 
-    cast["paddle"] = [Paddle()]
+    cast["jetpack"] = [Jetpack()]
     # TODO: Create a paddle here and add it to the list
 
 
@@ -82,7 +82,7 @@ def main():
 
 
     # Start the game
-    output_service.open_window("Batter");
+    output_service.open_window("jetpackjoyride");
     audio_service.start_audio()
     audio_service.play_sound(constants.SOUND_START)
     

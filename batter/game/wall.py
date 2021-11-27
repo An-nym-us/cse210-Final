@@ -6,7 +6,7 @@ from game import constants
 
 
 
-class Brick(Actor):
+class Wall(Actor):
     def __init__(self):
         super().__init__()
 

@@ -5,14 +5,14 @@ from game.input_service import InputService
 
 
 
-class Paddle(Actor):
+class Jetpack(Actor):
     def __init__(self):
         super().__init__()
         IMAGE_PADDLE = constants.IMAGE_PADDLE
         self._image = IMAGE_PADDLE
         self._width = constants.PADDLE_WIDTH
         self._height = constants.PADDLE_HEIGHT
-        self.is_Paddle = True
+        self.is_jetpack = True
         self.set_position(Point(300,550))
         self._velocity = Point(0, 0)
         self.direction = 0
