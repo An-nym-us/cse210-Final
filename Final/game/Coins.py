@@ -6,8 +6,8 @@ class Coin(Actor):
     def __init__(self):
         super().__init__()
         
-        BALL_IMAGE = constants.IMAGE_BALL
-        self._image = BALL_IMAGE
+        IMAGE_COIN = constants.IMAGE_COIN
+        self._image = IMAGE_COIN
         self._width = constants.BALL_WIDTH
         self._height = constants.BALL_HEIGHT
         self.is_coin = True
@@ -20,13 +20,13 @@ class Coin(Actor):
 
 
         #constructior Functions
-        self.set_image(BALL_IMAGE)
+        self.set_image(IMAGE_COIN)
         #self.set_position(self._position)
 
 
 
-    def set_image(self, BALL_IMAGE):
-        self._image = BALL_IMAGE
+    def set_image(self, IMAGE_COIN):
+        self._image = IMAGE_COIN
 
     #def set_position(self, position):
         #self._position = position

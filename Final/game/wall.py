@@ -11,7 +11,7 @@ class Wall(Actor):
         super().__init__()
 
         #Set All Constants
-        BRICK_IMAGE = constants.IMAGE_BRICK
+        WALL_IMAGE = constants.WALL_IMAGE
         BRICK_WIDTH = constants.BRICK_WIDTH
         BRICK_HEIGHT = constants.BRICK_HEIGHT
         self.is_ball = False
@@ -27,13 +27,13 @@ class Wall(Actor):
 
 
         #Constructor Functions
-        self.set_image(BRICK_IMAGE)
+        self.set_image(WALL_IMAGE)
 
 
 
 
-    def set_image(self, brick_image):
-        self._image = brick_image
+    def set_image(self, wall_image):
+        self._image = wall_image
 
 
     #Sets the position of the brick on the screen

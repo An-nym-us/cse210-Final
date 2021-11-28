@@ -8,8 +8,8 @@ from game.input_service import InputService
 class Jetpack(Actor):
     def __init__(self):
         super().__init__()
-        IMAGE_PADDLE = constants.IMAGE_PADDLE
-        self._image = IMAGE_PADDLE
+        IMAGE_JETPACK = constants.IMAGE_JETPACK
+        self._image = IMAGE_JETPACK
         self._width = constants.PADDLE_WIDTH
         self._height = constants.PADDLE_HEIGHT
         self.is_jetpack = True

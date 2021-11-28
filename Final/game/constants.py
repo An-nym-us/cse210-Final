@@ -8,9 +8,9 @@ DEFAULT_SQUARE_SIZE = 20
 DEFAULT_FONT_SIZE = 20
 DEFAULT_TEXT_OFFSET = 4
 
-IMAGE_BRICK = os.path.join(os.getcwd(), "./batter/assets/brick-3.png")
-IMAGE_PADDLE = os.path.join(os.getcwd(), "./batter/assets/bat.png")
-IMAGE_BALL = os.path.join(os.getcwd(), "./batter/assets/ball.png")
+IMAGE_WALL = os.path.join(os.getcwd(), "./batter/assets/brick-3.png")
+IMAGE_JETPACK = os.path.join(os.getcwd(), "./batter/assets/bat.png")
+IMAGE_COIN = os.path.join(os.getcwd(), "./batter/assets/ball.png")
 
 SOUND_START = os.path.join(os.getcwd(), "./batter/assets/start.wav")
 SOUND_BOUNCE = os.path.join(os.getcwd(), "./batter/assets/boing.wav")

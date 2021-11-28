@@ -34,17 +34,17 @@ def main():
 
 
 
-        
-    #Place words in array and Place the On the Screen
-    #for _ in range(3):     
-    #    for _ in range (16):
-    #        Brick_array.append(Brick())
-    #        Brick_array[k].set_position(Point(x,y))
-    #        k += 1
-    #        x += 50
-    #    x = 0
-    #    y += 30
-
+    '''  
+    Place words in array and Place the On the Screen
+    for _ in range(3):     
+        for _ in range (16):
+            Brick_array.append(Brick())
+            Brick_array[k].set_position(Point(x,y))
+            k += 1
+            x += 50
+        x = 0
+        y += 30
+    '''
 
 
 
