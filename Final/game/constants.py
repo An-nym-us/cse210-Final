@@ -8,13 +8,13 @@ DEFAULT_SQUARE_SIZE = 20
 DEFAULT_FONT_SIZE = 20
 DEFAULT_TEXT_OFFSET = 4
 
-IMAGE_WALL = os.path.join(os.getcwd(), "./batter/assets/brick-3.png")
-IMAGE_JETPACK = os.path.join(os.getcwd(), "./batter/assets/bat.png")
-IMAGE_COIN = os.path.join(os.getcwd(), "./batter/assets/ball.png")
+IMAGE_WALL = os.path.join(os.getcwd(), "./Final/assets/brick-3.png")
+IMAGE_JETPACK = os.path.join(os.getcwd(), "./Final/assets/bat.png")
+IMAGE_COIN = os.path.join(os.getcwd(), "./Final/assets/ball.png")
 
-SOUND_START = os.path.join(os.getcwd(), "./batter/assets/start.wav")
-SOUND_BOUNCE = os.path.join(os.getcwd(), "./batter/assets/boing.wav")
-SOUND_OVER = os.path.join(os.getcwd(), "./batter/assets/over.wav")
+SOUND_START = os.path.join(os.getcwd(), "./Final/assets/start.wav")
+SOUND_BOUNCE = os.path.join(os.getcwd(), "./Final/assets/boing.wav")
+SOUND_OVER = os.path.join(os.getcwd(), "./Final/assets/over.wav")
 
 BALL_X = MAX_X / 2
 BALL_Y = MAX_Y - 125
