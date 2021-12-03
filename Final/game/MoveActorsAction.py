@@ -2,6 +2,7 @@
 from game.action import Action
 from game.point import Point
 from game.Coins import Coin
+from game.HandleOffScreenAction import HandleOffScreenAction
 from game.input_service import InputService
 from game import constants
 
@@ -11,7 +12,8 @@ class MoveActorsAction(Action):
         super().__init__()
         self.tag_list = []
         self.input_service = InputService()
-        self.yloc= 0
+        self.yloc= 100
+        
         
         
 
@@ -48,14 +50,26 @@ class MoveActorsAction(Action):
                     pass
 
                 
+
                 try:
+
                     if actor.is_jetpack is not None:
-                        direction = self.input_service.get_direction()
-                        x_locaction = actor.get_position().get_x()
-                        y_direction = direction.get_y()                       
-                        y_direction = y_direction * 15                        
-                        self.yloc = y_direction + self.yloc
-                        actor.set_position(Point( x_locaction,self.yloc))
+                        if self.input_service.is_up_pressed() == False and actor.can_i_move_down == True:
+
+                            direction = self.input_service.get_direction()
+                            x_locaction = actor.get_position().get_x()
+                            y_direction = direction.get_y()                       
+                            y_direction = y_direction + 5                      
+                            self.yloc = y_direction + self.yloc
+                            actor.set_position(Point( x_locaction,self.yloc))
+
+                        elif actor.can_i_move_down == True and self.input_service.is_up_pressed() == True:
+                            direction = self.input_service.get_direction()
+                            x_locaction = actor.get_position().get_x()
+                            y_direction = direction.get_y()                       
+                            y_direction = y_direction - 10                        
+                            self.yloc = y_direction + self.yloc
+                            actor.set_position(Point( x_locaction,self.yloc))
                 except:
                     pass
 

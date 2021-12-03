@@ -13,7 +13,9 @@ class Jetpack(Actor):
         self._width = constants.PADDLE_WIDTH
         self._height = constants.PADDLE_HEIGHT
         self.is_jetpack = True
-        self.set_position(Point(300,550))
+        self.can_i_move_up = True
+        self.can_i_move_sown = True
+        self.set_position(Point(300,400))
         self._velocity = Point(0, 0)
         self.direction = 0
 
