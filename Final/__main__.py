@@ -13,6 +13,7 @@ from game.audio_service import AudioService
 from game.wall import Wall
 from game.Coins import Coin
 from game.Jetpack import Jetpack
+from game.AddNewWalls import AddNewWalls
 # from game.control_actors_action import ControlActorsAction
 from game.HandleCollisionsAction import HandleCollisionsAction
 from game.HandleOffScreenAction import HandleOffScreenAction
@@ -34,21 +35,23 @@ def main():
 
 
 
-    '''  
+    '''
     Place words in array and Place the On the Screen
     for _ in range(3):     
-        for _ in range (16):
-            Brick_array.append(Brick())
-            Brick_array[k].set_position(Point(x,y))
-            k += 1
-            x += 50
-        x = 0
-        y += 30
+        wall_array.append(Wall())
+        wall_array[k].set_position(Point(random.randrange(400, 500, 50), k))
+        k += 1
+        x += 50
+    x = 0
+    y += 30
     '''
 
 
 
-    cast["walls"] = wall_array
+
+
+
+    cast["walls"] = [Wall()]
 
 
     # TODO: Create bricks here and add them to the list
@@ -72,24 +75,25 @@ def main():
     move_actors_action = MoveActorsAction()
     handle_off_screen_actions = HandleOffScreenAction()
     handle_collisions_action = HandleCollisionsAction()
+    Add_New_Walls = AddNewWalls()
 
     # TODO: Create additional actions here and add them to the script
 
     script["input"] = []
-    script["update"] = [move_actors_action, handle_off_screen_actions, handle_collisions_action]
+    script["update"] = [move_actors_action, handle_off_screen_actions, handle_collisions_action, Add_New_Walls]
     script["output"] = [draw_actors_action]
 
 
 
     # Start the game
     output_service.open_window("jetpackjoyride");
-    audio_service.start_audio()
-    audio_service.play_sound(constants.SOUND_START)
+    #audio_service.start_audio()
+   # audio_service.play_sound(constants.SOUND_START)
     
     director = Director(cast, script)
     director.start_game()
 
-    audio_service.stop_audio()
+    #audio_service.stop_audio()
 
 if __name__ == "__main__":
     main()

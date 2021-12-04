@@ -19,7 +19,6 @@ class Jetpack(Actor):
         self._velocity = Point(0, 0)
         self.direction = 0
 
-    #def get_direction(self):
 
 
 

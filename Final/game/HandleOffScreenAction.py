@@ -38,12 +38,10 @@ class HandleOffScreenAction(Action):
                             actor.can_i_move_down = False
                         else:
                             actor.can_i_move_down = True
-
-
                 except:
                     pass
 
-                
+                #Coin Data
                 try:
                     if actor.is_coin == True:
                         #Make the ball change direction if it hits the left or right wall
@@ -64,7 +62,13 @@ class HandleOffScreenAction(Action):
                      pass
 
 
+                try:
+                    if actor.is_wall is not None:
 
+                        del actor
+
+                except:
+                    pass
        
 
 

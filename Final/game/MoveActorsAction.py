@@ -28,6 +28,7 @@ class MoveActorsAction(Action):
 
 
         for group in cast.values():
+
             for actor in group:
                 
                 velocity_x = actor.get_velocity().get_x()
@@ -49,8 +50,6 @@ class MoveActorsAction(Action):
                 except:
                     pass
 
-                
-
                 try:
 
                     if actor.is_jetpack is not None:
@@ -59,7 +58,7 @@ class MoveActorsAction(Action):
                             direction = self.input_service.get_direction()
                             x_locaction = actor.get_position().get_x()
                             y_direction = direction.get_y()                       
-                            y_direction = y_direction + 5                      
+                            y_direction = y_direction + 10                      
                             self.yloc = y_direction + self.yloc
                             actor.set_position(Point( x_locaction,self.yloc))
 
@@ -67,9 +66,21 @@ class MoveActorsAction(Action):
                             direction = self.input_service.get_direction()
                             x_locaction = actor.get_position().get_x()
                             y_direction = direction.get_y()                       
-                            y_direction = y_direction - 10                        
+                            y_direction = y_direction - 20                        
                             self.yloc = y_direction + self.yloc
                             actor.set_position(Point( x_locaction,self.yloc))
+                except:
+                    pass
+
+
+                #Move Wall Actor Accros The Screen
+                try:
+                    if actor.is_wall is not None:
+                        x_locaction = actor.get_position().get_x()
+                        y_locaction = actor.get_position().get_y()
+                        x_velocity = actor.get_velocity().get_x()
+                        x_locaction = x_locaction + x_velocity
+                        actor.set_position(Point( x_locaction,y_locaction))
                 except:
                     pass
 

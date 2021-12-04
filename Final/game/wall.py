@@ -1,5 +1,5 @@
 
-
+import random
 from game.actor import Actor
 from game.point import Point
 from game import constants
@@ -11,15 +11,15 @@ class Wall(Actor):
         super().__init__()
 
         #Set All Constants
-        WALL_IMAGE = constants.WALL_IMAGE
+        WALL_IMAGE = constants.IMAGE_WALL
         BRICK_WIDTH = constants.BRICK_WIDTH
         BRICK_HEIGHT = constants.BRICK_HEIGHT
-        self.is_ball = False
-
-        self._velocity = Point(0, 0)
+        self.is_wall = True
+        self._velocity = Point(-10, 0)
+        #print("Wall created")
         #Sets the postion to 0, 0 at spawn if the set postion is not defind
-        if self.set_position(Point(0,0)) is None:
-            self.set_position(Point(0,0))
+        if self.set_position(Point(700,random.randrange(20, 500))) is None:
+            self.set_position(Point(700,random.randrange(20, 500)))
        
 
         
