@@ -8,9 +8,17 @@ class HandleCollisionsAction(Action):
     def __init__(self):
         super().__init__()
         self.tag_list = []
+        self.point = Point(0,0)
 
     def execute(self, cast):
-        pass
+
+        for group in cast.values():
+            for actor in group:
+                self.POINT = actor.get_position()
+                print(self.point)
+                pass
+
+
 
 
 

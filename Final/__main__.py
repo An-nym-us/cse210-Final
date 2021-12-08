@@ -1,4 +1,5 @@
 import random
+#from Final.game import score_board
 from game import constants
 from game.director import Director
 from game.actor import Actor
@@ -14,6 +15,7 @@ from game.wall import Wall
 from game.Coins import Coin
 from game.Jetpack import Jetpack
 from game.AddNewWalls import AddNewWalls
+from game.score_board import ScoreBoard
 # from game.control_actors_action import ControlActorsAction
 from game.HandleCollisionsAction import HandleCollisionsAction
 from game.HandleOffScreenAction import HandleOffScreenAction
@@ -60,6 +62,7 @@ def main():
     # TODO: Create a ball here and add it to the list
 
     cast["jetpack"] = [Jetpack()]
+    cast["scoreboard"] = [ScoreBoard()]
     # TODO: Create a paddle here and add it to the list
 
 
@@ -76,11 +79,12 @@ def main():
     handle_off_screen_actions = HandleOffScreenAction()
     handle_collisions_action = HandleCollisionsAction()
     Add_New_Walls = AddNewWalls()
+    score_board = ScoreBoard()
 
     # TODO: Create additional actions here and add them to the script
 
     script["input"] = []
-    script["update"] = [move_actors_action, handle_off_screen_actions, handle_collisions_action, Add_New_Walls]
+    script["update"] = [move_actors_action, handle_off_screen_actions, handle_collisions_action, Add_New_Walls, score_board]
     script["output"] = [draw_actors_action]
 
 
