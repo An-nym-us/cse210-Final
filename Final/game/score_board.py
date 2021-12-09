@@ -15,7 +15,7 @@ class ScoreBoard(Actor):
         super().__init__()
         self.points = 0
         self.is_scoreboard = True
-        self.set_position(Point(100, 100))
+        self.set_position(Point(1, 1))
         self.my_text = "777"
         self.set_text(f"Score: {self.points}")
         
