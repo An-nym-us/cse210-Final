@@ -31,26 +31,9 @@ def main():
     x = 0
     y = 0
     k = 0
-    Mypoint = Point(x,x)
+
 
     wall_array = []
-
-
-
-    '''
-    Place words in array and Place the On the Screen
-    for _ in range(3):     
-        wall_array.append(Wall())
-        wall_array[k].set_position(Point(random.randrange(400, 500, 50), k))
-        k += 1
-        x += 50
-    x = 0
-    y += 30
-    '''
-
-
-
-
 
 
     cast["walls"] = [Wall()]

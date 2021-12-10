@@ -11,6 +11,7 @@ class HandleOffScreenAction(Action):
     def __init__(self):
         super().__init__()
         self.tag_list = []
+
         self.input_service = InputService()
         self.can_move_jetpack = False
 

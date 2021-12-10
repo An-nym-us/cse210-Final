@@ -1,4 +1,5 @@
 from time import sleep
+from game.HandleCollisionsAction import HandleCollisionsAction
 
 
 import os
@@ -36,6 +37,9 @@ class Director:
         self._cast = cast
         self._script = script
         self._keep_playing = True
+
+        self.The_collions = HandleCollisionsAction()
+
         
     def start_game(self):
         """Starts the game loop to control the sequence of play."""
@@ -45,9 +49,17 @@ class Director:
             self._cue_action("output")
 
             # TODO: Add some logic like the following to handle game over conditions
-            # if len(self._cast["balls"]) == 0:
-            #     # Game over
-            #     self._keep_playing = False
+            for group in self._script.values():
+                for actor in group:
+                    try:
+                        if actor.is_collisions is not None:
+                            if actor.end_the_game() == True:
+                                self._keep_playing = False
+                    except:
+                        pass
+                    
+
+
 
             if raylibpy.window_should_close():
                 self._keep_playing = False
